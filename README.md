@@ -1,6 +1,6 @@
 # curriculum-graph
 
-[SVG preview](http://www.inf.ufsc.br/~stenny/curriculum_graph.svg)
+[PNG preview](http://www.inf.ufsc.br/~stenny/tree.png)
 
 An attempt to organize and update the old course progression tree used 
 by compsci students of UFSC. Any course that belongs to the Deparment of 
