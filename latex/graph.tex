@@ -1,0 +1,113 @@
+\documentclass[10pt]{article}
+\usepackage{tikz}
+\usetikzlibrary{arrows}
+
+\usepackage[utf8]{inputenc}
+\usepackage[landscape, a4paper, left=5mm, right=5mm, top=15mm, bottom=15mm]{geometry}
+\usepackage{graphicx}
+
+\begin{document}
+\begin{tikzpicture}
+
+\pagenumbering{gobble}
+
+\tikzset{vertex/.style = {shape=rectangle,draw,minimum size=1.5em,text width=2.4cm, text centered}}
+\tikzset{edge/.style = {->,> = latex'}, line width = 2.5}
+
+\node[vertex, fill=red!25]    (ine5402) at (-2, 12)   {INE5402 Programação Orientada a Objetos I};
+\node[vertex, fill=yellow!25] (mtm5161) at (-2, 9)    {MTM5161 Cálculo A};
+\node[vertex, fill=green!25]  (ine5403) at (-2, 6)    {INE5403 Matemática Discreta};
+\node[vertex, fill=white!25]  (ine5401) at (-2, 3)    {INE5401 Introdução à Computação};
+\node[vertex, fill=blue!25]   (eel5105) at (-2, 0)    {EEL5105 Circuitos e Técnicas Digitais};
+\node[vertex, fill=red!25]    (ine5404) at (1.5, 12)  {INE5404 Programação Orientada a Objetos II};
+\node[vertex, fill=yellow!25] (mtm7174) at (1.5, 9)   {MTM7174 Cálculo B para Computação};
+\node[vertex, fill=yellow!25] (ine5405) at (1.5, 6)   {INE5405 Probabilidade e Estatística};
+\node[vertex, fill=yellow!25] (mtm5512) at (1.5, 3)   {MTM5512 Geometria Analítica};
+\node[vertex, fill=blue!25]   (ine5406) at (1.5, 0)   {INE5406 Sistemas Digitais};
+\node[vertex, fill=white!25]  (ine5407) at (1.5, -3)  {INE5407 Ciência, Tecnologia e Sociedade};
+\node[vertex, fill=red!25]    (ine5408) at (5, 12)    {INE5408 Estruturas de Dados};
+\node[vertex, fill=red!25]    (ine5410) at (5, 9)     {INE5410 Programação Concorrente};
+\node[vertex, fill=yellow!25] (ine5409) at (5, 6)     {INE5409 Cálculo Numérico para Computação};
+\node[vertex, fill=yellow!25] (mtm5245) at (5, 3)     {MTM5245 Álgebra Linear};
+\node[vertex, fill=blue!25]   (ine5411) at (5, 0)     {INE5411 Organização de Computadores I};
+\node[vertex, fill=red!25]    (ine5417) at (8.5, 12)  {INE5417 Engenharia de Software I};
+\node[vertex, fill=green!25]  (ine5413) at (8.5, 9)   {INE5413 Grafos};
+\node[vertex, fill=green!25]  (ine5415) at (8.5, 6)   {INE5415 Teoria da Computação};
+\node[vertex, fill=green!25]  (ine5416) at (8.5, 3)   {INE5416 Paradigmas de Programação};
+\node[vertex, fill=blue!25]   (ine5412) at (8.5, 0)   {INE5412 Sistemas Operacionais I};
+\node[vertex, fill=orange!25] (ine5414) at (8.5, -3)  {INE5414 Redes de Computadores I};
+\node[vertex, fill=red!25]    (ine5419) at (12, 12)   {INE5419 Engenharia de Software II};
+\node[vertex, fill=purple!25] (ine5423) at (12, 9)    {INE5423 Banco de Dados I};
+\node[vertex, fill=yellow!25] (ine5420) at (12, 6)    {INE5420 Computação Gráfica};
+\node[vertex, fill=green!25]  (ine5421) at (12, 3)    {INE5421 Linguagens Formais e Compiladores};
+\node[vertex, fill=blue!25]   (ine5418) at (12, 0)    {INE5418 Computação Distribuída};
+\node[vertex, fill=orange!25] (ine5422) at (12, -3)   {INE5422 Redes de Computadores II};
+\node[vertex, fill=red!25]    (ine5427) at (15.5, 12) {INE5427 Planejamento e Gestão de Projetos};
+\node[vertex, fill=red!25]    (ine5453) at (15.5, 9)  {INE5453 Introdução ao TCC};
+\node[vertex, fill=yellow!25] (ine5425) at (15.5, 6)  {INE5425 Modelagem e Simulação};
+\node[vertex, fill=green!25]  (ine5430) at (15.5, 3)  {INE5430 Inteligência Artificial};
+\node[vertex, fill=green!25]  (ine5426) at (15.5, 0)  {INE5426 Construção de Compiladores};
+\node[vertex, fill=blue!25]   (ine5424) at (15.5, -3) {INE5424 Sistemas Operacionais II};
+\node[vertex, fill=red!25]    (ine5433) at (19, 12)   {INE5433 TCC I};
+\node[vertex, fill=purple!25] (ine5432) at (19, 9)    {INE5432 Banco de Dados II};
+\node[vertex, fill=green!25]  (ine5429) at (19, 6)    {INE5429 Segurança em Computação};
+\node[vertex, fill=orange!25] (ine5431) at (19, 3)    {INE5431 Sistemas Multimídia};
+\node[vertex, fill=white!25]  (ine5428) at (19, 0)    {INE5428 Informática e Sociedade};
+\node[vertex, fill=red!25]    (ine5434) at (22.5, 12) {INE5434 TCC II};
+\node[vertex, fill=white!25]  (opt1)    at (22.5, 6)  {Optativas do INE \\ (288h/a)};
+\node[vertex, fill=white!25]  (opt2)    at (22.5, 3)  {Optativas gerais \\ (144h/a)};
+
+\node (logo_ufsc) at (22.5, -0.6)  {\includegraphics[scale=0.4]{logo-ufsc.png}};
+\node (logo_cc)   at (22.5, -3.55) {\includegraphics[scale=0.2]{by-nc-nd.png}};
+\node[align=center] (credits) at (22.5, -2.2) {\tiny UFSC/CTC/INE};
+\node[align=center] (credits) at (22.5, -2.5) {\tiny Ciência da Computação};
+\node[align=center] (credits) at (22.5, -2.8) {\tiny Árvore Curricular 2007/1};
+\node[align=center] (credits) at (22.5, -4.3) {\tiny \texttt{gustavo.zambonin@grad.ufsc.br}};
+
+\draw[edge, red]             (ine5402) to (ine5404);
+\draw[edge, black!70!green]  (ine5403) to (-2, 7.5) to (8.5, 7.5) to (ine5413);
+\draw[edge, black!70!green]  (ine5403) to (-2, 7.5) to (8.5, 7.5) to (ine5415);
+\draw[edge, black!70!green]  (ine5403) to (-2, 7.5) to (19, 7.5) to (ine5429);
+\draw[edge, red]             (ine5404) to (ine5408);
+\draw[edge, red]             (ine5404) to (ine5410);
+\draw[edge, red]             (ine5404) to (3.25, 10.5) to (3.25,-3) to (ine5414);
+\draw[edge, black!40!yellow] (ine5405) to (1.5,4.65) to (15.5, 4.65) to (ine5425);
+\draw[edge, black!40!yellow] (ine5405) to (1.5,4.65) to (15.5, 4.65) to (ine5430);
+\draw[edge, blue]            (ine5406) to (ine5411);
+\draw[edge, black]           (ine5407) to (1.5, -4.5) to (19, -4.5) to (ine5428);
+\draw[edge, red]             (ine5408) to (ine5417);
+\draw[edge, red]             (ine5408) to (6.75, 10.5) to (6.75, 9) to (ine5413);
+\draw[edge, red]             (ine5408) to (6.75, 10.5) to (6.75, 6) to (ine5415);
+\draw[edge, red]             (ine5408) to (10.25, 9.75) to (10.25, 9) to (ine5423);
+\draw[edge, red]             (ine5408) to (10.25, 9.75) to (10.25, 6) to (ine5420);
+\draw[edge, red]             (ine5408) to (6.75, 10.5) to (6.75, 3) to (ine5416);
+\draw[edge, red]             (ine5410) to (6.5, 9) to (6.5, 1.5) to (8.5, 1.5) to (ine5412);
+\draw[edge, blue]            (ine5411) to (ine5412);
+\draw[edge, blue]            (ine5412) to (ine5418);
+\draw[edge, blue]            (ine5412) to (9,-1.75) to (15.5, -1.75) to (ine5424);
+\draw[edge, black!70!green]  (ine5413) to (10, 9) to (10, 1.75) to (15.5, 1.75) to (ine5430);
+\draw[edge, orange]          (ine5414) to (9, -1.5) to (17.25, -1.5) to (17.25, 6) to (ine5429);
+\draw[edge, orange]          (ine5414) to (9, -1.5) to (17.25, -1.5) to (17.25, 3) to (ine5431);
+\draw[edge, orange]          (ine5414) to (ine5422);
+\draw[edge, orange]          (ine5414) to (9, -1.5) to (12,-1.5) to (ine5418);
+\draw[edge, black!70!green]  (ine5415) to (8.5, 5) to (10.25, 5) to (10.25, 3) to (ine5421);
+\draw[edge, black!70!green]  (ine5416) to (9, 1.5) to (15, 1.5) to (ine5430);
+\draw[edge, red]             (ine5417) to (ine5419);
+\draw[edge, red]             (ine5417) to (12, 10.5) to (15.5, 10.5) to (ine5427);
+\draw[edge, red]             (ine5417) to (12, 10.5) to (15.5, 10.5) to (ine5453);
+\draw[edge, black!70!green]  (ine5421) to (12, 1.25) to (15.5, 1.25) to (ine5426);
+\draw[edge, red]             (ine5427) to (ine5433);
+\draw[edge, purple]          (ine5423) to (12, 7.75) to (19, 7.75) to (ine5432);
+\draw[edge, red]             (ine5433) to (ine5434);
+\draw[edge, red]             (ine5453) to (ine5433);
+\draw[edge, blue]            (eel5105) to (ine5406);
+\draw[edge, black!40!yellow] (mtm5161) to (mtm7174);
+\draw[edge, black!40!yellow] (mtm5161) to (ine5405);
+\draw[edge, black!40!yellow] (mtm5245) to (5.5, 4.25) to (11, 4.25) to (ine5420);
+\draw[edge, black!40!yellow] (mtm5512) to (1.5, 4.25) to (5, 4.25) to (ine5409);
+\draw[edge, black!40!yellow] (mtm5512) to (mtm5245);
+\draw[edge, black!40!yellow] (mtm7174) to (1.5, 8) to (11, 8) to (ine5420);
+\draw[edge, black!40!yellow] (mtm7174) to (1.5, 8) to (5, 8) to (ine5409);
+
+\end{tikzpicture}
+\end{document}
