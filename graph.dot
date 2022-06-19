@@ -1,0 +1,172 @@
+// force absence of multi-edges with `strict` keyword
+strict digraph "curriculum-graph-compsci-ufsc" {
+  // direction of graph layout is left to right
+  rankdir=LR;
+
+  // edges route around nodes with polygonal chains
+  splines=ortho;
+
+  // set transparent background
+  bgcolor="#00000000";
+
+  // set global style for nodes
+  node [
+    width=1.4 height=.5 shape=box style=filled
+    fontname=Arial colorscheme=set36
+  ];
+
+  // set global style for edges
+  edge [style=bold colorscheme=set36 arrowsize=.5 arrowhead=tee];
+
+  // hack to remove extra space between header and other clusters
+  subgraph cluster_everything {
+    // remove all cluster borders
+    color="#00000000";
+
+    // if positioned after other clusters, then the header becomes a footer
+    subgraph cluster_header {
+      // align header with other clusters via an invisible chain
+      "Fase 1" -> "Fase 2" -> "Fase 3" -> "Fase 4" ->
+      "Fase 5" -> "Fase 6" -> "Fase 7" -> "Fase 8+" [style=invis];
+    }
+
+    // colorscheme and labels are subjective
+    // there is no automatic text wrapping, so new lines are inserted manually
+    subgraph cluster_1 {
+      eel5105 [color=5 label="EEL5105\nCircuitos"];
+      ine5401 [color=3 label="INE5401\nIntrodução"];
+      ine5402 [color=4 label="INE5402\nPOO I"];
+      ine5403 [color=1 label="INE5403\nMat. Discreta"];
+      mtm3100 [color=6 label="MTM3100\nPré-Cálculo"];
+      mtm3110 [color=6 label="MTM3110\nCálculo 1"];
+    }
+
+    subgraph cluster_2 {
+      ine5404 [color=4 label="INE5404\nPOO II"];
+      ine5406 [color=5 label="INE5406\nSist. Digitais"];
+      ine5407 [color=3 label="INE5407\nCTS"];
+      mtm3111 [color=6 label="MTM3111\nGA"];
+      mtm3120 [color=6 label="MTM3120\nCálculo 2"];
+      mtm3121 [color=6 label="MTM3121\nAL"];
+    }
+
+    subgraph cluster_3 {
+      ine5202 [color=6 label="INE5202\nCalc. Num."];
+      ine5408 [color=4 label="INE5408\nED"];
+      ine5410 [color=5 label="INE5410\nProg. Conc."];
+      ine5411 [color=5 label="INE5411\nOrg. Comp."];
+      mtm3131 [color=6 label="MTM3131\nEq. Dif. Ord."];
+    }
+
+    subgraph cluster_4 {
+      ine5412 [color=5 label="INE5412\nSO I"];
+      ine5413 [color=1 label="INE5413\nGrafos"];
+      ine5414 [color=3 label="INE5414\nRedes I"];
+      ine5415 [color=1 label="INE5415\nTC"];
+      ine5416 [color=1 label="INE5416\nParadigmas"];
+      ine5417 [color=4 label="INE5417\nES I"];
+    }
+
+    subgraph cluster_5 {
+      ine5405 [color=6 label="INE5405\nProb. e Est."];
+      ine5418 [color=5 label="INE5418\nComp. Dist."];
+      ine5419 [color=4 label="INE5419\nES II"];
+      ine5420 [color=6 label="INE5420\nCG"];
+      ine5421 [color=1 label="INE5421\nLing. Formais"];
+      ine5422 [color=3 label="INE5422\nRedes II"];
+    }
+
+    subgraph cluster_6 {
+      ine5423 [color=3 label="INE5423\nBD I"];
+      ine5424 [color=5 label="INE5424\nSO II"];
+      ine5425 [color=6 label="INE5425\nMod. e Sim."];
+      ine5426 [color=1 label="INE5426\nCompiladores"];
+      ine5427 [color=4 label="INE5427\nP&GP"];
+      ine5430 [color=1 label="INE5430\nIA"];
+      ine5453 [color=4 label="INE5453\nIntrod. TCC"];
+    }
+
+    subgraph cluster_7 {
+      ine5428 [color=3 label="INE5428\nInf. e Soc."];
+      ine5429 [color=1 label="INE5429\nSegurança"];
+      ine5431 [color=3 label="INE5431\nMultimídia"];
+      ine5432 [color=3 label="INE5432\nBD II"];
+      ine5433 [color=4 label="INE5433\nTCC I"];
+    }
+
+    // last cluster also holds general info
+    subgraph cluster_8 {
+      ine5434 [color=4 label="INE5434\nTCC II"];
+      opt1 [fontsize="12pt" label="Optativas INE\n(288 h/a)"];
+      opt2 [fontsize="12pt" label="Optativas ext.\n(144 h/a)"];
+      comp [fontsize="12pt" label="Ativid. compl.\n(168 h/a)"];
+
+      // label location parameters still make it overlap with the image,
+      // so height is set manually
+      info [
+        color="#00000000" labelloc="b" imagescale=true imagepos="tc"
+        fontsize="7pt" height=2.35 image="logo-ufsc.svg"
+        label="UFSC/CTC/INE\nCiência da Computação\nÁrvore Curricular 2007/1"
+      ];
+
+      license [
+        color="#00000000" labelloc="b" imagescale=true imagepos="tc"
+        fontsize="7pt" height=.75 fontname=mono image="by-nc-sa.svg"
+        label="gustavo.zambonin\nat grad.ufsc.br"
+      ];
+    }
+  }
+
+  // the heart of the graph: edge descriptions
+  // they are not grouped to make editing and parsing easier
+  eel5105 -> ine5406 [color=5];
+  ine5202 -> ine5425 [color=6];
+  ine5402 -> ine5404 [color=4];
+  ine5403 -> ine5413 [color=1];
+  ine5403 -> ine5415 [color=1];
+  ine5403 -> ine5429 [color=1];
+  ine5404 -> ine5408 [color=4];
+  ine5404 -> ine5410 [color=4];
+  ine5404 -> ine5414 [color=4];
+  ine5405 -> ine5425 [color=6];
+  ine5405 -> ine5430 [color=6];
+  ine5406 -> ine5411 [color=5];
+  ine5407 -> ine5428 [color=3];
+  ine5408 -> ine5413 [color=4];
+  ine5408 -> ine5415 [color=4];
+  ine5408 -> ine5416 [color=4];
+  ine5408 -> ine5417 [color=4];
+  ine5408 -> ine5420 [color=4];
+  ine5408 -> ine5423 [color=4];
+  ine5410 -> ine5412 [color=5];
+  ine5411 -> ine5412 [color=5];
+  ine5412 -> ine5418 [color=5];
+  ine5412 -> ine5424 [color=5];
+  ine5413 -> ine5430 [color=1];
+  ine5414 -> ine5418 [color=3];
+  ine5414 -> ine5422 [color=3];
+  ine5414 -> ine5429 [color=3];
+  ine5414 -> ine5431 [color=3];
+  ine5415 -> ine5421 [color=1];
+  ine5416 -> ine5430 [color=1];
+  ine5417 -> ine5419 [color=4];
+  ine5417 -> ine5427 [color=4];
+  ine5417 -> ine5453 [color=4];
+  ine5421 -> ine5426 [color=1];
+  ine5423 -> ine5432 [color=3];
+  ine5427 -> ine5433 [color=4];
+  ine5433 -> ine5434 [color=4];
+  ine5453 -> ine5433 [color=4];
+
+  // the student may not need to take pre-calculus so the constraint is broken,
+  // also it makes the graph prettier
+  mtm3100 -> mtm3110 [color=6, constraint=false];
+  mtm3110 -> ine5405 [color=6];
+  mtm3110 -> mtm3120 [color=6];
+  mtm3111 -> ine5202 [color=6];
+  mtm3120 -> ine5202 [color=6];
+  mtm3120 -> ine5420 [color=6];
+  mtm3120 -> mtm3131 [color=6];
+  mtm3121 -> ine5420 [color=6];
+  mtm3121 -> mtm3131 [color=6];
+}
