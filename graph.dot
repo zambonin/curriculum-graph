@@ -1,5 +1,5 @@
 // force absence of multi-edges with `strict` keyword
-strict digraph "curriculum-graph-compsci-ufsc" {
+strict digraph "curriculum-graph-compsci-ufsc-2023" {
   // direction of graph layout is left to right
   rankdir=LR;
 
@@ -26,87 +26,94 @@ strict digraph "curriculum-graph-compsci-ufsc" {
     // if positioned after other clusters, then the header becomes a footer
     subgraph cluster_header {
       // align header with other clusters via an invisible chain
-      "Fase 1" -> "Fase 2" -> "Fase 3" -> "Fase 4" ->
-      "Fase 5" -> "Fase 6" -> "Fase 7" -> "Fase 8+" [style=invis];
+      "Fase 1" -> "Fase 2" -> "Fase 3" -> "Fase 4" -> "Fase 5" ->
+      "Fase 6" -> "Fase 7" -> "Fase 8" -> "Fase 9+" [style=invis];
     }
 
     // colorscheme and labels are subjective
     // there is no automatic text wrapping, so new lines are inserted manually
     subgraph cluster_1 {
-      eel5105 [color=5 label="EEL5105\nCircuitos"];
-      ine5401 [color=3 label="INE5401\nIntrodução"];
-      ine5402 [color=4 label="INE5402\nPOO I"];
-      ine5403 [color=1 label="INE5403\nMat. Discreta"];
-      mtm3100 [color=6 label="MTM3100\nPré-Cálculo"];
-      mtm3110 [color=6 label="MTM3110\nCálculo 1"];
+      f01_prep      [height=0.50 color=2 label="Prep. Carreira"];
+      f01_iape      [height=1.25 color=4 label="Introdução à\nAlgoritmos e\nProgramação\nEstruturada"];
+      f01_discreta  [height=1.25 color=1 label="Fund. da\nMatemática\nDiscreta para\nComputação"];
+      f01_icc       [height=1.25 color=5 label="Introdução à\nCiência da\nComputação"];
     }
 
     subgraph cluster_2 {
-      ine5404 [color=4 label="INE5404\nPOO II"];
-      ine5406 [color=5 label="INE5406\nSist. Digitais"];
-      ine5407 [color=3 label="INE5407\nCTS"];
-      mtm3111 [color=6 label="MTM3111\nGA"];
-      mtm3120 [color=6 label="MTM3120\nCálculo 2"];
-      mtm3121 [color=6 label="MTM3121\nAL"];
+      f02_mc        [height=0.50 color=2 label="Metodologia"];
+      f02_sah1      [height=0.25 color=2 label="SAH I"];
+      f02_edl       [height=1.25 color=4 label="Algoritmos e\nEstruturas de\nDados\n Lineares"];
+      f02_ids       [height=0.75 color=4 label="Introdução ao\nDesenvolv. de\nSistemas"];
+      f02_circuitos [height=0.75 color=5 label="Circuitos\nDigitais"];
+      f02_calc1     [height=0.75 color=6 label="Cálculo I"];
     }
 
     subgraph cluster_3 {
-      ine5202 [color=6 label="INE5202\nCalc. Num."];
-      ine5408 [color=4 label="INE5408\nED"];
-      ine5410 [color=5 label="INE5410\nProg. Conc."];
-      ine5411 [color=5 label="INE5411\nOrg. Comp."];
-      mtm3131 [color=6 label="MTM3131\nEq. Dif. Ord."];
+      f03_edn       [height=1.00 color=4 label="Algoritmos e\nEstruturas de\nDados\nNão-Lineares"];
+      f03_poo       [height=1.25 color=4 label="Programação\nOrientada a\nObjetos"];
+      f03_sistemas  [height=0.25 color=5 label="Sist. Dig."];
+      f03_labsd     [height=0.25 color=5 label="Lab. Sist. Dig."];
+      f03_prob      [height=0.75 color=6 label="Probabilidade\ne Estatística"];
+      f03_calc2     [height=0.75 color=6 label="Cálculo II"];
     }
 
     subgraph cluster_4 {
-      ine5412 [color=5 label="INE5412\nSO I"];
-      ine5413 [color=1 label="INE5413\nGrafos"];
-      ine5414 [color=3 label="INE5414\nRedes I"];
-      ine5415 [color=1 label="INE5415\nTC"];
-      ine5416 [color=1 label="INE5416\nParadigmas"];
-      ine5417 [color=4 label="INE5417\nES I"];
+      f04_bd        [height=0.75 color=3 label="Banco de\nDados"];
+      f04_grafos    [height=0.75 color=1 label="Teoria dos\nGrafos e\nAplicações"];
+      f04_segcomp   [height=0.75 color=1 label="Segurança\nem\nComputação"];
+      f04_engsoft   [height=0.75 color=4 label="Engenharia\nde Software"];
+      f04_org       [height=0.75 color=5 label="Organização\nde Comp."];
+      f04_algebra   [height=0.75 color=6 label="Álgebra\nLinear"];
     }
 
     subgraph cluster_5 {
-      ine5405 [color=6 label="INE5405\nProb. e Est."];
-      ine5418 [color=5 label="INE5418\nComp. Dist."];
-      ine5419 [color=4 label="INE5419\nES II"];
-      ine5420 [color=6 label="INE5420\nCG"];
-      ine5421 [color=1 label="INE5421\nLing. Formais"];
-      ine5422 [color=3 label="INE5422\nRedes II"];
+      f05_sah2      [height=0.25 color=2 label="SAH II"];
+      f05_formais   [height=0.75 color=1 label="Linguagens\nFormais e\nMod. de Rep."];
+      f05_apa       [height=0.75 color=1 label="Análise e\nProjeto de\nAlgoritmos"];
+      f05_redes     [height=0.75 color=3 label="Redes"];
+      f05_so        [height=0.75 color=5 label="Sistemas\nOperacionais"];
+      f05_numerico  [height=0.75 color=6 label="Cálculo\nNumérico\nComput."];
     }
 
     subgraph cluster_6 {
-      ine5423 [color=3 label="INE5423\nBD I"];
-      ine5424 [color=5 label="INE5424\nSO II"];
-      ine5425 [color=6 label="INE5425\nMod. e Sim."];
-      ine5426 [color=1 label="INE5426\nCompiladores"];
-      ine5427 [color=4 label="INE5427\nP&GP"];
-      ine5430 [color=1 label="INE5430\nIA"];
-      ine5453 [color=4 label="INE5453\nIntrod. TCC"];
+      f06_cg        [height=0.75 color=3 label="Computação\nGráfica"];
+      f06_tc        [height=0.75 color=1 label="Teoria da\nComputação"];
+      f06_ia        [height=0.75 color=3 label="Introdução à\nInteligência\nArtificial"];
+      f06_dist      [height=0.75 color=5 label="Computação\nDistribuída"];
+      f06_paradig   [height=0.75 color=3 label="Paradigmas\nde\nProgramação"];
+      f06_opt61     [height=0.75 label="Optativa 6.1"];
     }
 
     subgraph cluster_7 {
-      ine5428 [color=3 label="INE5428\nInf. e Soc."];
-      ine5429 [color=1 label="INE5429\nSegurança"];
-      ine5431 [color=3 label="INE5431\nMultimídia"];
-      ine5432 [color=3 label="INE5432\nBD II"];
-      ine5433 [color=4 label="INE5433\nTCC I"];
+      f07_ippg      [height=0.75 color=2 label="Integração\ncom Pesquisa\ne Pós-Grad."];
+      f07_iec       [height=0.75 color=2 label="Empreender"];
+      f07_compila   [height=0.75 color=1 label="Compiladores"];
+      f07_paralela  [height=0.75 color=5 label="Computação\nParalela"];
+      f07_opt71     [height=0.75 label="Optativa 7.1"];
+      f07_opt72     [height=0.75 label="Optativa 7.2"];
     }
 
-    // last cluster also holds general info
     subgraph cluster_8 {
-      ine5434 [color=4 label="INE5434\nTCC II"];
-      opt1 [fontsize="12pt" label="Optativas INE\n(288 h/a)"];
-      opt2 [fontsize="12pt" label="Optativas ext.\n(144 h/a)"];
-      comp [fontsize="12pt" label="Ativid. compl.\n(168 h/a)"];
+      f08_tcc1      [height=1.50 color=2 label="Trabalho de\nConclusão\nde Curso I"];
+      f08_cts       [height=1.00 color=2 label="Ciência,\nTecnologia\ne Sociedade"];
+      f08_opt81     [height=0.75 label="Optativa 8.1"];
+      f08_opt82     [height=0.75 label="Optativa 8.2"];
+      f08_opt83     [height=0.75 label="Optativa 8.3"];
+    }
+
+    // last cluster also hold general info
+    subgraph cluster_9 {
+      f09_tcc2      [height=1.75 color=2 label="Trabalho de\nConclusão\nde Curso II"];
+      f09_opt91     [height=0.75 label="Optativa 9.1"];
+      f09_opt92     [height=0.75 label="Optativa 9.2"];
+      f09_opt93     [height=0.75 label="Optativa 9.3"];
 
       // label location parameters still make it overlap with the image,
       // so height is set manually
       info [
         color="#00000000" labelloc="b" imagescale=true imagepos="tc"
         fontsize="7pt" height=2.35 image="logo-ufsc.svg"
-        label="UFSC/CTC/INE\nCiência da Computação\nÁrvore Curricular 2007/1"
+        label="UFSC/CTC/INE\nCiência da Computação\nÁrvore Curricular 2023-1"
       ];
 
       license [
@@ -119,54 +126,54 @@ strict digraph "curriculum-graph-compsci-ufsc" {
 
   // the heart of the graph: edge descriptions
   // they are not grouped to make editing and parsing easier
-  eel5105 -> ine5406 [color=5];
-  ine5202 -> ine5425 [color=6];
-  ine5402 -> ine5404 [color=4];
-  ine5403 -> ine5413 [color=1];
-  ine5403 -> ine5415 [color=1];
-  ine5403 -> ine5429 [color=1];
-  ine5404 -> ine5408 [color=4];
-  ine5404 -> ine5410 [color=4];
-  ine5404 -> ine5414 [color=4];
-  ine5405 -> ine5425 [color=6];
-  ine5405 -> ine5430 [color=6];
-  ine5406 -> ine5411 [color=5];
-  ine5407 -> ine5428 [color=3];
-  ine5408 -> ine5413 [color=4];
-  ine5408 -> ine5415 [color=4];
-  ine5408 -> ine5416 [color=4];
-  ine5408 -> ine5417 [color=4];
-  ine5408 -> ine5420 [color=4];
-  ine5408 -> ine5423 [color=4];
-  ine5410 -> ine5412 [color=5];
-  ine5411 -> ine5412 [color=5];
-  ine5412 -> ine5418 [color=5];
-  ine5412 -> ine5424 [color=5];
-  ine5413 -> ine5430 [color=1];
-  ine5414 -> ine5418 [color=3];
-  ine5414 -> ine5422 [color=3];
-  ine5414 -> ine5429 [color=3];
-  ine5414 -> ine5431 [color=3];
-  ine5415 -> ine5421 [color=1];
-  ine5416 -> ine5430 [color=1];
-  ine5417 -> ine5419 [color=4];
-  ine5417 -> ine5427 [color=4];
-  ine5417 -> ine5453 [color=4];
-  ine5421 -> ine5426 [color=1];
-  ine5423 -> ine5432 [color=3];
-  ine5427 -> ine5433 [color=4];
-  ine5433 -> ine5434 [color=4];
-  ine5453 -> ine5433 [color=4];
+  f01_iape -> f02_edl [color=4];
+  f01_iape -> f02_ids [color=4];
+  f01_iape -> f03_poo [color=4];
+  f01_iape -> f05_numerico [color=4];
+  f01_iape -> f05_formais [color=4];
+  f01_discreta -> f05_formais [color=1];
+  f01_discreta -> f04_segcomp [color=1];
+  f01_discreta -> f04_grafos [color=1];
+  f01_icc -> f02_circuitos [color=5];
 
-  // the student may not need to take pre-calculus so the constraint is broken,
-  // also it makes the graph prettier
-  mtm3100 -> mtm3110 [color=6, constraint=false];
-  mtm3110 -> ine5405 [color=6];
-  mtm3110 -> mtm3120 [color=6];
-  mtm3111 -> ine5202 [color=6];
-  mtm3120 -> ine5202 [color=6];
-  mtm3120 -> ine5420 [color=6];
-  mtm3120 -> mtm3131 [color=6];
-  mtm3121 -> ine5420 [color=6];
-  mtm3121 -> mtm3131 [color=6];
+  f02_mc -> f07_ippg [color=2];
+  f02_mc -> f07_iec [color=2];
+  f02_edl -> f03_edn [color=4];
+  f02_ids -> f04_engsoft [color=4];
+  f02_circuitos -> f03_labsd [color=5];
+  f02_circuitos -> f03_sistemas [color=5];
+  f02_calc1 -> f03_prob [color=6];
+  f02_calc1 -> f03_calc2 [color=6];
+
+  f03_edn -> f06_cg [color=4];
+  f03_edn -> f04_bd [color=4];
+  f03_edn -> f04_grafos [color=4];
+  f03_edn -> f06_paradig [color=4];
+  f03_edn -> f07_compila [color=4];
+  f03_edn -> f06_ia [color=4];
+  f03_edn -> f05_redes [color=4];
+  f03_edn -> f05_so [color=4];
+  f03_poo -> f04_engsoft [color=4];
+  f03_sistemas -> f04_org [color=5];
+  f03_calc2 -> f05_numerico [color=6];
+
+  f04_grafos -> f05_apa [color=1];
+  f04_org -> f05_so [color=5];
+  f04_org -> f07_paralela [color=5];
+  f04_algebra -> f05_numerico [color=6];
+
+  f05_formais -> f06_tc [color=1];
+  f05_formais -> f07_compila [color=1];
+  f05_redes -> f06_dist [color=3];
+  f05_redes -> f07_paralela [color=3];
+  f05_so -> f06_dist [color=5];
+  f05_numerico -> f06_cg [color=6];
+
+  // hack to put things in their right place
+  f06_opt61 -> f07_opt71 [style=invis];
+
+  f07_ippg -> f08_tcc1 [color=2];
+  f07_iec -> f08_tcc1 [color=2];
+
+  f08_tcc1 -> f09_tcc2 [color=2];
 }
